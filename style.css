@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Ruge Boogie', cursive;
+}
+
+.text {
+  font-size: 90px;
+  margin: 0;
+  position: absolute;
+  top: 47%;
+  left: 30%;
+  color: #ffe2b3;
+}
+
+.one {
+  left: 6%;
+  transform: rotate(-15deg);
+}
+
+.two {
+  left: 25%;
+  transform: rotate(-5deg);
+  top: 70%;
+  color: #ffe1b35e;
+}
+
+.four {
+  top: 20%;
+  left: 15%;
+  color: #ffb3b3;
+}
+
+.five {
+  top: 53%;
+  transform: rotate(19deg);
+  left: 17%;
+  color: #ffb3b38c;
+}
+
+.six {
+  left: 5%;
+  top: 80%;
+  color: #ffb3b3;
+}
