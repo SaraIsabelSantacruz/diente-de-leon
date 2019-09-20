@@ -14,12 +14,13 @@ let on3 = false;
 
 //Preload de las imagenes
 function preload() {
+  mic = new p5.AudioIn();
   petalPic = loadImage("petal.svg");
   stemPic = loadImage("bodyPlant.png");
 }
 
 function setup() {
-  mic = new p5.AudioIn();
+  getAudioContext().resume();
   mic.start();
   createCanvas(windowWidth, windowHeight);
   noStroke();
