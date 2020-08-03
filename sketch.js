@@ -14,13 +14,15 @@ let on3 = false;
 
 //Preload de las imagenes
 function preload() {
-  mic = new p5.AudioIn();
   petalPic = loadImage("petal.svg");
   stemPic = loadImage("bodyPlant.png");
 }
 
 function setup() {
-  getAudioContext().resume();
+  setTimeout(() => {
+    
+  }, 1000);
+  mic = new p5.AudioIn();
   mic.start();
   createCanvas(windowWidth, windowHeight);
   noStroke();
@@ -42,7 +44,8 @@ function windowResized() {
 
 function draw() {
   micLevel = mic.getLevel()*100; //obtener el nivel del volumen
-  background(255);
+  background(250);
+
   //La ubicacion del tallo del diente de leon
 	//Rotacion del tallo para crear efecto de balanceado
   translate(windowWidth/5, windowHeight);
@@ -50,6 +53,8 @@ function draw() {
   translate(-windowWidth/8+20, -windowHeight);
   image(stemPic, windowWidth/8-20, windowHeight/2+170, 40, 300);
 
+  // Aqui se ejecuta el movimiento de los petalos o semillas del diente de leon
+  // dependiendo del nivel de presion del microfono. 
 	for (let i = 0; i < petals.length; i++) {
     if (mode=="move1"){
       petals[i].move();

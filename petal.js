@@ -1,10 +1,10 @@
 function petal(xs, ys, rot, index, type) {
-  //definir los parameteros de los petalos
-  let x, y;
+  //Aqui se definen los parameteros de los petalos
+  let x, y; // ----> estas son las posiciones.
   let sizeScale = 0.35;
 	this.index=index
   this.xStart = xs;
-  this.yStart = ys;
+  this.yStart = ys; 
   this.xDis = random(50,100);
   this.xSpeed = random(0,1);
   this.xTheta = random(360);
@@ -17,21 +17,21 @@ function petal(xs, ys, rot, index, type) {
   this.sizeYSpeed = this.size / 50;
   this.sizeYScale = 0;
 
+  // Aqui se define el tamano de los petalos,
+  // dependiendo de si son los de afuera o los de adentro.
   if(type === 'out') {
     sizeScale = 0.28;
   } else if(type === 'inn'){
     sizeScale = 0.2;
   }
-  
+
   this.draw = function() {
     fill(100);
     push();		
-  // Trasladar 
+    // Esto se encarga de la traslacion de los petalos.
     translate(this.ox, this.oy);
     rotate(this.rotateT);
 		rotate(sin(frameCount/(40+noise(index)*50)+noise(index))/16);
-    
-  //
     beginShape();
     x = 0;
     y = 3;
@@ -40,7 +40,8 @@ function petal(xs, ys, rot, index, type) {
     pop();
   };
 
-  //
+  //Esta funcion se encarga de moverlos dependiendo del nivel de presion del microfono que se define
+  // en el sketch principal
   this.move = function() {
     this.xStart += this.xDis * 0.04
     this.ox = this.xStart;
